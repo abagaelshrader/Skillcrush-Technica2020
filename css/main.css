@@ -16,7 +16,7 @@
     font-size: 1em;
     line-height: 1.4;
   }
-  
+
   /*
    * Remove text-shadow in selection highlight:
    * https://twitter.com/miketaylr/status/12228805301
@@ -26,21 +26,21 @@
    *
    * Customize the background color to match your design.
    */
-  
+
   ::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;
   }
-  
+
   ::selection {
     background: #b3d4fc;
     text-shadow: none;
   }
-  
+
   /*
    * A better looking default horizontal rule
    */
-  
+
   hr {
     display: block;
     height: 1px;
@@ -49,13 +49,13 @@
     margin: 1em 0;
     padding: 0;
   }
-  
+
   /*
    * Remove the gap between audio, canvas, iframes,
    * images, videos and the bottom of their containers:
    * https://github.com/h5bp/html5-boilerplate/issues/440
    */
-  
+
   audio,
   canvas,
   iframe,
@@ -64,48 +64,58 @@
   video {
     vertical-align: middle;
   }
-  
+
   /*
    * Remove default fieldset styles.
    */
-  
+
   fieldset {
     border: 0;
     margin: 0;
     padding: 0;
   }
-  
+
   /*
    * Allow only vertical resizing of textareas.
    */
-  
+
   textarea {
     resize: vertical;
   }
-  
+
   /* ==========================================================================
      Browser Upgrade Prompt
      ========================================================================== */
-  
+
   .browserupgrade {
     margin: 0.2em 0;
     background: #ccc;
     color: #000;
     padding: 0.2em 0;
   }
-  
+
   /* ==========================================================================
      Author's custom styles
      ========================================================================== */
   /* General Styles */
   /* Note - remember mobile first*/
+  :root {
+    --dkteal: #006d77;
+    --teal: #83c5be;
+    --blue: #d1e8f0;
+    --ltblue: #edf6f9;
+    --coral: #ffddd2;
+    --dkcoral: #e29578;
+    --beige: #fcfbf9;
+    --dkgray: #707070;
+  }
   html {
     font-size: 16px;
   }
   body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 1em;
-    color: #e2e3ed;
+    color: var(--dkgray);
     text-align: left;
   }
   ul, ol {
@@ -140,7 +150,96 @@
   }
   .content-wrapper {
     width: 90%;
-    margin: 50px 0;
+    margin: 0 auto;
+  }
+  section#sight {
+    height: 100vh;
+    background: var(--dkteal);
+  }
+  section#touch {
+    height: 100vh;
+    background: var(--teal);
+  }
+  section#hear {
+    height: 100vh;
+    background: var(--blue);
+  }
+  section#smell {
+    height: 100vh;
+    background: var(--coral);
+  }
+  section#taste {
+    height: 100vh;
+    background: var(--dkcoral);
+  }
+  .number-card .content-wrapper {
+    height: 80vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    color: var(--dkgray);
+    font-size: 48px;
+  }
+  .number-card .content-wrapper p {
+    padding: 10vh 5vh 5vh 5vh;
+  }
+  .number-card .content-wrapper span {
+    font-weight: bolder;
+  }
+  .dark-bg .content-wrapper {
+    color: var(--beige);
+  }
+  .number-card {
+    position: relative;
+    z-index: 1;
+  }
+  .number-card:before {
+    position: absolute;
+    z-index: -1;
+    top: -13%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 40em;
+    font-weight: bolder;
+    opacity: .5;
+    color: var(--beige);
+  }
+  #sight:before {
+    content: "5";
+  }
+  #touch:before {
+    content: "4";
+  }
+  #hear:before {
+    content: "3";
+  }
+  #smell:before {
+    content: "2";
+  }
+  #taste:before {
+    content: "1";
+  }
+  button {
+    background: var(--beige);
+    border-radius: 50px;
+    border: none;
+    padding: 20px 40px;
+    color: var(--dkgray);
+    font-size: 24px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  /*button a { */
+  a {
+    color: var(--dkgray);
+    font-size: 24px;
+  }
+  button:hover {
+    background: var(--ltblue);
+    cursor: pointer;
   }
   /* ---------- BASE HEADER - FOOTER STYLES ------------- */
   /* Reminder - top right bottom left */
@@ -152,7 +251,7 @@
     align-items: center;
     background-color: #202322;
   }
-  
+
   /* HEADER STYLES */
   header {
     padding-top: 15px;
@@ -198,42 +297,31 @@
     font-weight: bold;
     font-size: 1.125em;
   }
-  
+
   /* FOOTER STYLES */
   footer {
     flex-direction: column;
     text-align: center;
   }
   footer .content-wrapper {
-    width: 55%;
-    margin: 50px 0;
+    width: 80%;
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
-  footer .contact {
-    margin-bottom: 50px;
-    /*text-align: center;*/
+  footer .hotline {
+    margin-bottom: 20px;
   }
-  footer .social-icons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  footer .social-icons p {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #527158;
-  }
-  footer .social-icons p i {
-    font-size: 1.125em;
-  }
-  footer p {
+  footer p, a {
     margin: 0;
+    font-size: 1em;
+  }
+  footer h2 {
+    font-size: 1.25em;
+    margin-top: 0;
+    margin-bottom: 0px;
   }
   footer h4 {
-    margin-bottom: 20px;
+    margin-bottom: 0;
     margin-top: 0;
   }
   footer .copyright {
@@ -243,17 +331,19 @@
   /* ------------ MOBILE STYLES - HOMEPAGE ------------ */
   /* HERO AREA */
   .hero-area {
+    height: 100vh;
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
-    background: url('../img/jake-melara-30679-unsplash.jpg') center no-repeat #333;
+    background: url('../img/mountains.jpg') center no-repeat #333;
     background-size: cover;
     background-position: center;
     min-height: 500px; /*It shows too much of her shirt - why??*/
   }
   .hero-area h1 {
+    color: var(--beige);
     font-size: 2.25em;
-    font-family: 'Poppins', Helvetica, Arial, sans-serif;
+    font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
     font-weight: 500;
     line-height: 1.2; /*line height does not need px or em or percentage - trick*/
   }
@@ -264,7 +354,7 @@
      -------- HOMEPAGE FORM STYLES -----------
      Accepts data from user with <input> elements
      ========================================================================== */
-  
+
   /* ASIDE */
   aside {
     display: flex;
@@ -305,159 +395,128 @@
     text-align: center;
     text-transform: uppercase;
   }
-  
-  /* FEATURES */
-  .features {
+
+  /* -------- BREATHING ------- */
+  #breathing {
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
-    background: url('../img/rawpixel-800820-unsplash1.jpg') center no-repeat #333;
+    background-color: #ded5d0;
     background-size: cover;
     background-position: center;
   }
-  .features .features-items {
+  #breathing .breathing-items {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-flow: row wrap;
+    flex-direction: column;
   }
-  .features article {
+  #breathing article {
     width: 60%;
-    margin: 30px 0;
+    margin: 20px 0;
   }
-  .features p {
+  #breathing .breathing-item-description {
+    margin-top: 10px;
+  }
+  #breathing p {
     margin: 0;
     text-align: center;
   }
-  .features h2 {
-    margin-bottom: 60px;
-    margin-top: 0;
+  #breathing h2 {
+    margin-bottom: 20px;
+    margin-top: 40px;
+    text-align: center;
   }
-  .features i {
-    font-size: 3.75em;
+  #breathing h3 {
+    margin: 10px 0;
+    text-align: center;
+  }
+  #breathing i {
     margin-bottom: 35px;
   }
-  /* REVIEWS */
-  .reviews {
-    display: flex;
-    justify-content: center;
-    flex-flow: row wrap;
-    background-color: #2a423a;
-  }
-  .reviews h2 {
-    margin-bottom: 40px;
-    margin-top: 0;
-    line-height: 1;
-  }
-  .reviews h3 {
-    width: 55%;/*I put 90%*/
-    margin: 20px 0;
-  }
-  .reviews p {
-    margin-bottom: 0;
-  }
-  
-  /* ------------ MOBILE STYLES - ABOUT PAGE ------------ */
-  /* MISSION */
-  .mission {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: row wrap;
-    background-color: #527158;
-  }
-  .mission .content-wrapper {
-    margin-bottom: 36px;
-  }
-  .mission .content-wrapper h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
-  }
-  .mission p {
-    line-height: 1.25em;
-  }
-  /* iFrame Map */
-  .map figure {
+  /* iFrame Embedded Videos */
+  #breathing figure {
     width: 100%;
     height: 0;
     padding-bottom: 80%; /*keeps the rectangle size proportions intact*/
     overflow: hidden;
     position: relative; /*doesn't do anything but allows you to put absolute position in the child div*/
   }
-  .map iframe {
+  #breathing iframe {
     width: 100%; /*fill entire div width*/
     height: 100%; /*fill entire div height*/
     position: absolute;
     top: 0;
     left: 0;
   }
-  /* CONTACT */
-  .contact-section {
-    background-color: #2a423a;
+  #breathing button {
+    margin-bottom: 40px;
+  }
+  /* ------- RESOURCES ------- */
+  #resources {
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-flow: row wrap;
+    background-color: #006d77;
+    background-size: cover;
+    background-position: center;
   }
-  .contact-section h2 {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .contact-section h4 {
-    margin-bottom: 10px;
-    margin-top: 10px;
-  }
-  .contact-content p {
-    margin: 0;
-  }
-  
-  /* ------------ MOBILE STYLES - FAQ PAGE ------------ */
-  /* FAQ */
-  .faq {
+  #resources .content-wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-flow: row wrap;
-    background-color: #527158;
   }
-  .faq .content-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: row wrap;
-    margin-bottom: 36px;
+  #resources h2 {
+    margin-bottom: 40px;
+    margin-top: 40px;
+    line-height: 1;
+    color: var(--beige);
+    text-align: center;
   }
-  .faq h2 {
-    margin: 0;
-    margin-bottom: 15px;
-    line-height: 1em;
+  #resources h3 {
+    width: 100%;/*I put 90%*/
+    margin: 20px 0;
+    color: var(--beige);
+    text-align: center;
+    font-size: 1.25em;
   }
-  .faq h4 {
-    line-height: 1.3em;
-    margin-bottom: 0;
+  #resources p {
+    margin-bottom: 20px;
+    color: var(--beige);
+    text-align: center;
   }
-  .faq-content {
-    display: flex;
-    justify-content: space-around;
-    align-items: baseline;
-    flex-flow: row wrap;
+  #resources article {
+    width: 60%;
   }
-  .faq-content h4 {
-    line-height: 1.3;
+  /* iFrame Embedded Videos */
+  #resources figure {
+    width: 100%;
+    height: 0;
+    padding-bottom: 80%; /*keeps the rectangle size proportions intact*/
+    overflow: hidden;
+    position: relative; /*doesn't do anything but allows you to put absolute position in the child div*/
   }
-  
+  #resources iframe {
+    width: 100%; /*fill entire div width*/
+    height: 100%; /*fill entire div height*/
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
   /* ==========================================================================
      Helper classes
      ========================================================================== */
-  
+
   /*
    * Hide visually and from screen readers
    */
-  
+
   .hidden {
     display: none !important;
   }
-  
+
   /*
   * Hide only visually, but have it available for screen readers:
   * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
@@ -466,7 +525,7 @@
   *    causes content to wrap 1 word per line:
   *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
   */
-  
+
   .sr-only {
     border: 0;
     clip: rect(0, 0, 0, 0);
@@ -479,13 +538,13 @@
     width: 1px;
     /* 1 */
   }
-  
+
   /*
   * Extends the .sr-only class to allow the element
   * to be focusable when navigated to via the keyboard:
   * https://www.drupal.org/node/897638
   */
-  
+
   .sr-only.focusable:active,
   .sr-only.focusable:focus {
     clip: auto;
@@ -496,15 +555,15 @@
     white-space: inherit;
     width: auto;
   }
-  
+
   /*
   * Hide visually and from screen readers, but maintain layout
   */
-  
+
   .invisible {
     visibility: hidden;
   }
-  
+
   /*
   * Clearfix: contain floats
   *
@@ -516,7 +575,7 @@
   * 2. The use of `table` rather than `block` is only necessary if using
   *    `:before` to contain the top-margins of child elements.
   */
-  
+
   .clearfix:before,
   .clearfix:after {
     content: " ";
@@ -524,15 +583,15 @@
     display: table;
     /* 2 */
   }
-  
+
   .clearfix:after {
     clear: both;
   }
-  
+
   /* ==========================================================================
   --------- MEDIA QUERIES ------------ (START WITH MOBILE FIRST DESIGN)
   ========================================================================== */
-  
+
   @media only screen and (min-width: 768px) {
     /*Tablet styles here*/
     /*-------------GENERAL----------------*/
@@ -589,7 +648,7 @@
       width: 40%;
       margin: 0;
     }
-  
+
     /* FEATURES */
     .features .content-wrapper {
       margin-top: 100px;
@@ -604,7 +663,7 @@
     .features .features-item-description {
       width: 70%; /*makes text wider*/
     }
-  
+
     /* REVIEWS */
     .reviews .content-wrapper {
       margin: 100px 0;
@@ -625,7 +684,7 @@
     .reviews article div {
       width: 49%;
     }
-  
+
     /* CONTACT-SECTION*/
     footer .content-wrapper {
       width: 65%;
@@ -636,13 +695,19 @@
       align-items: baseline; /*maybe center once icons are in*/
       flex-direction: row;
     }
-    footer .contact {
+    footer .hotline {
+      margin-bottom: 0;
+    }
+    footer .hotline h2 {
       margin-bottom: 0;
     }
     footer h4 {
-      font-size: 1.5em;
+      font-size: 1em;
     }
-    footer .social {
+    footer h2 {
+      margin-bottom: 20px;
+    }
+    footer .hotline {
       width: 35%;
       justify-content: space-between;
     }
@@ -666,7 +731,7 @@
       justify-content: space-between;
       align-items: baseline;
     }
-  
+
     /* --------------- FAQ PAGE -------------- */
     .faq-content {
       display: flex;
@@ -741,7 +806,7 @@
     .map figure {
       padding-bottom: 37%;
     }
-  
+
     /* --------- FAQ PAGE STYLES ------- */
     .faq h2 {
       width: 100%;
@@ -752,7 +817,7 @@
      Inlined to avoid the additional HTTP request:
      https://www.phpied.com/delay-loading-your-print-css/
      ========================================================================== */
-  
+
   @media print {
     *,
     *:before,
@@ -811,4 +876,3 @@
       page-break-after: avoid;
     }
   }
-  
